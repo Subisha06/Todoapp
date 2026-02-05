@@ -18,11 +18,11 @@ function Profile() {
       .then((res) => setUser(res.data))
       .catch((err) =>{
         let status=err.status
-        if(status==401){
+        if(status===401){
           navigate('/login')
         }
         console.log(err)});
-  }, []);
+  }, [navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem("token"); 
